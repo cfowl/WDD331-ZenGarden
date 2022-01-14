@@ -1,0 +1,11 @@
+// mixins
+
+@mixin background-img ($img, $repeat:no-repeat, $size:contain) {
+    background-image: $img;
+    background-repeat: $repeat;
+    background-size: $size;    
+}
+
+@mixin border($color, $line:solid, $thickness:3px) {
+    border: $line $thickness $color;    
+}

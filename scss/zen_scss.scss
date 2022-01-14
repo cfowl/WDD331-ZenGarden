@@ -1,0 +1,181 @@
+/* css for entire site */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+@import 'partials/colors';
+@import 'partials/images';
+@import 'partials/mixins';
+@import 'partials/keyframes';
+
+#css-zen-garden {    
+    background-color: $color-5;
+    @include background-img($header-img);
+}
+
+body {
+    margin: 8px 0 0 0;
+}
+
+.preamble, .main {
+    margin: 0 8px;
+}
+p, h3, h1, li {
+    font-family: 'Roboto Mono', monospace;
+    color: $color-1;
+}
+
+ul {
+    list-style-type: none;
+    padding: 15px;
+}
+
+/* HEADER */
+header h1 {
+    font-family: 'Roboto Mono', monospace;
+    color: $color-1;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 45%;
+    margin-bottom: 0;
+}
+
+header h2 {
+    font-family: 'Roboto Mono', monospace;
+    color: $color-1;
+    font-style: italic;
+    text-align: center;
+}
+
+.intro a {
+    color: $color-3;
+}
+
+.intro a:hover {
+    color: $color-4;
+}
+
+#zen-summary p {
+    padding: 1rem;
+    color: $color-1;
+    text-align: center;
+}
+
+/* GRID STYLE */
+#zen-preamble, #zen-participation {
+    padding: 1rem;
+    background-color: #594C2D;
+    @include border(#C09C25);
+    margin-bottom: 1rem;
+}
+
+#zen-preamble p, #zen-participation p, #zen-preamble h3, #zen-participation h3 {
+    color: #E8D35C;
+}
+
+#zen-participation a {
+    background-color:#E8D35C;
+    color: #594C2D;
+}
+
+/* BLUE IBM STYLE */
+#zen-explanation, #zen-benefits {
+    padding: 1rem;
+    background-color: #496CE3;
+    @include border($color-1);
+    margin-bottom: 1rem;
+}
+
+#zen-explanation p, #zen-benefits p, #zen-explanation h3, #zen-benefits h3 {
+    color: $color-1;
+}
+
+/* GREEN IBM STYLE */
+#zen-requirements {
+    padding: 1rem;
+    background-color: $color-5;
+    @include border($color-2);
+}
+
+#zen-requirements a {
+    background-color: $color-2;
+    color: $color-1;
+}
+
+#zen-requirements h3, #zen-requirements p {
+    color: $color-2;
+}
+
+/* FOOTER */
+footer {
+    background-color: $color-2;
+    padding: 1rem;
+}
+
+footer a {
+    float: left;
+    text-align: center;
+    width: 20%;
+    color: $color-5;
+    font-weight: bolder;
+    font-size: 1.15em;
+    font-family: Roboto Mono;
+    margin-top: -8px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    font-size: 1.4em;
+    margin-top: -12px;
+    transition: 700ms ease-out;
+}
+
+.sidebar a {
+    color: $color-4;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    font-size: 1.05em;
+    text-decoration: underline;
+    transition: 500ms ease-out;
+}
+
+.design-selection, .design-archives, .zen-resources {
+    text-align: left;
+    margin-top: 4em;
+    padding-left: 10px;
+}
+
+.design-selection h3.select::after, .design-archives h3.archives::after, .zen-resources h3.resources::after {
+    content: "";
+    position: absolute;
+    width: 7%;
+    height: 7%;
+    margin-left: 50px;
+    margin-top: -35px;
+    @include background-img($satellite-img, $size:cover);
+	background-position: center;
+    
+}
+
+.design-selection h3.select::after {
+    animation: clockwise 25s linear infinite;
+}
+
+.design-archives h3.archives::after {
+    animation: clockwise 25s linear infinite;
+}
+
+.zen-resources h3.resources::after {
+    animation: clockwise 25s linear infinite;
+}
+
+#css-zen-garden::after {
+    content: "";
+    @include background-img($footer-img, $size:cover);
+    background-position-x: center;
+    width: 100%;
+    height: 50%;
+    position: absolute;
+}
+
+@import 'partials/media-query';
